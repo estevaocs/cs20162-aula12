@@ -1,8 +1,8 @@
 package com.github.estevaocs.view;
 
-import model.Expression;
+import com.github.estevaocs.model.Expression;
 import com.github.estevaocs.control.ExpressionEvaluator;
-import model.Test;
+import com.github.estevaocs.model.Test;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -50,8 +50,9 @@ public class QpHelper {
     /**
      * Método que Transforma os teste do arquivo .txt em objetos Expression;
      *
-     * @throws IOException - caso nao exista o arquivo txt ou se os testes não
-     * estiverem o formato correto.
+     * @throws IOException - caso os testes não estiverem o formato correto.
+     * @throws NumberFormatException - caso os caso de test apresente algum erro
+     * no formato padrão.
      */
     public static void toExpression() throws IOException, NumberFormatException {
         ArrayList<String> lines = getLines();

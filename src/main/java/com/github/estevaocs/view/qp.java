@@ -1,9 +1,8 @@
 package com.github.estevaocs.view;
 
-import com.github.estevaocs.dao.*;
-import dao.DAO_HTML;
+import com.github.estevaocs.dao.DAOJson;
+import com.github.estevaocs.dao.DAO_HTML;
 import java.io.IOException;
-import org.apache.maven.plugin.MojoExecutionException;
 
 /**
  * Created by Estevao on 04/12/2016.

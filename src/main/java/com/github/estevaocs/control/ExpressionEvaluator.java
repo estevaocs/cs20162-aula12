@@ -1,8 +1,8 @@
 package com.github.estevaocs.control;
 
 import com.github.kyriosdata.parser.*;
-import model.Expression;
-import model.Test;
+import com.github.estevaocs.model.Expression;
+import com.github.estevaocs.model.Test;
 import java.util.HashMap;
 import java.util.List;
 

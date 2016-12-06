@@ -1,8 +1,8 @@
-package dao;
+package com.github.estevaocs.dao;
 
 
-import model.Expression;
-import model.Test;
+import com.github.estevaocs.model.Expression;
+import com.github.estevaocs.model.Test;
 
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.FileWriter;
@@ -15,8 +15,8 @@ import java.io.PrintWriter;
 public class DAO_HTML extends HTMLEditorKit{
 
     private String html;
-    private FileWriter fileWriter;
-    private PrintWriter printWriter;
+    private final FileWriter fileWriter;
+    private final PrintWriter printWriter;
 
     /**
      * Método que Cria o DAO_HTML, e inicia o FileWriter e o PrintWriter gerando o arquivo .html
@@ -46,7 +46,7 @@ public class DAO_HTML extends HTMLEditorKit{
      * @return - String - Codigo HTML
      */
     private String generetorCodeHTML(Test test) {
-        String html = "<html>\n" +
+        String codHtml = "<html>\n" +
                 "<head>\n" +
                 "<meta charset=\"UTF-8\">\n" +
                 "<title>Relatório de Testes</title>\n" +
@@ -99,7 +99,7 @@ public class DAO_HTML extends HTMLEditorKit{
                     + "<td>" + expre.getEsperado() + "</td>\n"
                     + "<td>" + expre.getObtido() + "</td>\n";
         }
-        return html + contentExpression + "</tr>\n</table>\n</body>\n</html>";
+        return codHtml + contentExpression + "</tr>\n</table>\n</body>\n</html>";
     }
 
 

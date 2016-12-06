@@ -1,7 +1,7 @@
 package com.github.estevaocs.dao;
 
 import com.google.gson.Gson;
-import model.Test;
+import com.github.estevaocs.model.Test;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,14 +10,15 @@ import java.io.PrintWriter;
  * Created by Estevao on 04/12/2016.
  */
 public class DAOJson {
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
     private String json;
-    private FileWriter fileWriter;
-    private PrintWriter printWriter;
+    private final FileWriter fileWriter;
+    private final PrintWriter printWriter;
 
     /**
      * Construtor do DAOJson
      * instacia o PrintWriter e o FileWrite e cria o arquivo.json
+     * @param localFile
      * @throws IOException
      */
     public DAOJson(String localFile) throws IOException {

@@ -1,4 +1,4 @@
-package model;
+package com.github.estevaocs.model;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Test {
     private int totalDeTest;
     private int sucessos;
     private int falhas;
-    private ArrayList<Expression> testes;
+    private final ArrayList<Expression> testes;
 
 
     public Test(ArrayList<Expression> testes) {

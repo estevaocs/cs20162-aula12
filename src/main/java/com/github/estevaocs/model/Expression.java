@@ -1,4 +1,4 @@
-package model;
+package com.github.estevaocs.model;
 
 import java.util.HashMap;
 
@@ -7,8 +7,8 @@ import java.util.HashMap;
  * Created by Estevao on 01/09/2016.
  */
 public class Expression {
-    private String expressao;
-    private float esperado;
+    private final String expressao;
+    private final float esperado;
     private HashMap<String, Float> variaveis;
     private float obtido;
 

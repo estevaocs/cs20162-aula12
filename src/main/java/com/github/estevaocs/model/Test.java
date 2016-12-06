@@ -9,7 +9,7 @@ public class Test {
     private long tempoTotal;
     private long memoriaInicio;
     private long memoriaFinal;
-    private int totalDeTest;
+    private final int totalDeTest;
     private int sucessos;
     private int falhas;
     private final ArrayList<Expression> testes;
@@ -45,7 +45,7 @@ public class Test {
 
     public void setSucessos(int sucessos) {
         this.sucessos = sucessos;
-        this.falhas = totalDeTest - sucessos;
+        this.falhas = getTotalDeTest()- sucessos;
     }
 
     public int getFalhas() {

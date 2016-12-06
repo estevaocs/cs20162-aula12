@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DAOJson.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">qp</a> &gt; <a href="index.source.html" class="el_package">com.github.estevaocs.dao</a> &gt; <span class="el_source">DAOJson.java</span></div><h1>DAOJson.java</h1><pre class="source lang-java linenums">package com.github.estevaocs.dao;
+
+import com.google.gson.Gson;
+import model.Test;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+/**
+ * Created by Estevao on 04/12/2016.
+ */
+public class DAOJson {
+<span class="fc" id="L13">    private Gson gson = new Gson();</span>
+    private String json;
+    private FileWriter fileWriter;
+    private PrintWriter printWriter;
+
+    /**
+     * Construtor do DAOJson
+     * instacia o PrintWriter e o FileWrite e cria o arquivo.json
+     * @throws IOException
+     */
+<span class="fc" id="L23">    public DAOJson(String localFile) throws IOException {</span>
+<span class="fc" id="L24">        fileWriter = new FileWriter(localFile.replaceAll(&quot;.txt&quot;,&quot;.json&quot;));</span>
+<span class="fc" id="L25">        printWriter = new PrintWriter(fileWriter);</span>
+<span class="fc" id="L26">    }</span>
+
+    /**
+     * Instancia o arquivo.json
+     * @param test - resultados dos testes executados
+     * @throws IOException
+     */
+    public void add(Test test) throws IOException {
+<span class="fc" id="L34">        json = gson.toJson(test);</span>
+<span class="fc" id="L35">        printWriter.write(json);</span>
+<span class="fc" id="L36">        fileWriter.close();</span>
+<span class="fc" id="L37">        printWriter.close();</span>
+<span class="fc" id="L38">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

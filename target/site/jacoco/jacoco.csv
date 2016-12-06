@@ -1,8 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-qp,dao,DAO_HTML,0,123,0,2,0,24,0,4,0,3
-qp,com.github.estevaocs.dao,DAOJson,0,42,0,0,0,10,0,2,0,2
-qp,model,Expression,0,48,0,2,0,16,0,9,0,8
-qp,model,Test,0,62,0,0,0,22,0,13,0,13
-qp,com.github.estevaocs.control,ExpressionEvaluator,3,113,0,4,1,32,1,5,1,3
-qp,com.github.estevaocs.view,qp,13,52,0,4,7,21,2,5,2,3
-qp,com.github.estevaocs.view,QpHelper,3,154,0,8,1,34,1,8,1,4

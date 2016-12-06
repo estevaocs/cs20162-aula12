@@ -1,7 +1,0 @@
-com\github\estevaocs\control\ExpressionEvaluator.class
-model\Test.class
-com\github\estevaocs\dao\DAOJson.class
-model\Expression.class
-dao\DAO_HTML.class
-com\github\estevaocs\view\qp.class
-com\github\estevaocs\view\QpHelper.class

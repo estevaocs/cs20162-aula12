@@ -50,8 +50,9 @@ public class QpHelper {
     /**
      * Método que Transforma os teste do arquivo .txt em objetos Expression;
      *
-     * @throws IOException - caso nao exista o arquivo txt ou se os testes não
-     * estiverem o formato correto.
+     * @throws IOException - caso os testes não estiverem o formato correto.
+     * @throws NumberFormatException - caso os caso de test apresente algum erro
+     * no formato padrão.
      */
     public static void toExpression() throws IOException, NumberFormatException {
         ArrayList<String> lines = getLines();

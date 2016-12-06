@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2016. Fábrica de Software - Instituto de Informática (UFG)
+ * Creative Commons Attribution 4.0 International License.
+ * 
+ * Pacote Contendo a classe de controle
+ */
 package com.github.estevaocs.control;
 
 import com.github.kyriosdata.parser.*;
@@ -16,7 +22,7 @@ public class ExpressionEvaluator {
      * @param expression - String -> expressão matemática
      * @return - float - resultado da expressão
      */
-    private static float expressionExector(String expression) {
+    private float expressionExector(String expression) {
         List<Token> tokens = new Lexer(expression).tokenize();
         Parser parser = new Parser(tokens);
         float resultado = parser.expressao().valor();
@@ -28,8 +34,10 @@ public class ExpressionEvaluator {
      * @param expression - String -> expressão Matemática
      * @param variables - HashMap -> variaveis e seus respectivos Valores.
      * @return - float - resultado da expressão
+     * 
+     * @see java.util.HashMap
      */
-    private static float expressionExector(String expression, HashMap<String, Float> variables) {
+    private float expressionExector(String expression, HashMap<String, Float> variables) {
         List<Token> tokens = new Lexer(expression).tokenize();
         Parser parser = new Parser(tokens);
         float resultado = parser.expressao().valor(variables);
@@ -40,8 +48,10 @@ public class ExpressionEvaluator {
      * Executa os casos de testes do arquivo .txt e guarda seus resultados
      * @param teste - Test - casos de testes
      * @return - Test - Resultados
+     * 
+     * @see com.github.estevaocs.model.Test
      */
-    public static Test testerExecuter(Test teste) {
+    public Test testerExecuter(Test teste) {
         int contSuccess = 0;
         long time = 0;
         long memoriaInicial = Runtime.getRuntime().totalMemory() 
@@ -64,7 +74,7 @@ public class ExpressionEvaluator {
         }
         long memoriaFinal = Runtime.getRuntime().totalMemory() 
                 - Runtime.getRuntime().freeMemory();
-        teste.setTempoTotal(time);
+        teste.setTempo(time);
         teste.setMemoriaInicio(memoriaInicial);
         teste.setMemoriaFinal(memoriaFinal);
         teste.setSucessos(contSuccess);

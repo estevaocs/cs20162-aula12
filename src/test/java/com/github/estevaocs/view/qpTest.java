@@ -96,7 +96,6 @@ public class qpTest {
         int result = qp.pseudoMain(args);
         assertEquals(expResult, result);
     }
-  
-
     
+      
 }

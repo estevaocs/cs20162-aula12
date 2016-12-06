@@ -1,27 +1,48 @@
+/**
+ * Copyright (c) 2016. Fábrica de Software - Instituto de Informática (UFG)
+ * Creative Commons Attribution 4.0 International License.
+ * 
+ * Pacote Contendo todos os dao
+ */
 package com.github.estevaocs.dao;
 
 
 import com.github.estevaocs.model.Expression;
 import com.github.estevaocs.model.Test;
-
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by Estevao on 04/12/2016.
+ * Classe responsável por escrever o código HTML
+ * expressão teste.
+ * @author Estevao Cristino
+ * @since 04/12/2016.
+ * @version 1.0
  */
-public class DAO_HTML extends HTMLEditorKit{
+public class DAO_HTML {
 
-    private String html;
+    /**
+     * Criador do arquivo .html
+     * 
+     * @see java.io.FileWriter
+     */
     private final FileWriter fileWriter;
+    
+    /**
+     * Escritor do codigo HTML no arquivo .html
+     * 
+     * @see java.io.PrintWriter
+     */
     private final PrintWriter printWriter;
 
     /**
      * Método que Cria o DAO_HTML, e inicia o FileWriter e o PrintWriter gerando o arquivo .html
      * @param localFile - String -> Local onde irá criar o arquivo .html
      * @throws IOException - caso nao consiga gerar o arquivo .html
+     * 
+     * @see import java.io.IOException;
      */
     public DAO_HTML(String localFile) throws IOException {
         fileWriter = new FileWriter(localFile.replaceAll(".txt",".html"));
@@ -33,6 +54,9 @@ public class DAO_HTML extends HTMLEditorKit{
      * Método que instancia o arquivo HTML com o codigo do relatorio;
      * @param test - Testes - resultados dos testes executados
      * @throws IOException - Caso nao encontre o arquivo .html
+     * 
+     * @see import java.io.IOException
+     * @see com.github.estevaocs.model.Test
      */
     public void createHTML(Test test) throws IOException {
         printWriter.write(generetorCodeHTML(test));
@@ -44,6 +68,8 @@ public class DAO_HTML extends HTMLEditorKit{
      * Método que irá gerar o codigo HTML
      * @param test - Test - resultados dos testes gerados
      * @return - String - Codigo HTML
+     * 
+     * @see com.github.estevaocs.model.Test
      */
     private String generetorCodeHTML(Test test) {
         String codHtml = "<html>\n" +
